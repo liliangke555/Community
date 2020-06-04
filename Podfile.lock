@@ -1,0 +1,21 @@
+PODS:
+  - LDWKWebView (0.0.1)
+  - ReactiveObjC (3.1.1)
+
+DEPENDENCIES:
+  - LDWKWebView
+  - ReactiveObjC (~> 3.1.0)
+
+SPEC REPOS:
+  "git@github.com:liliangke555/LookDoorSpecs.git":
+    - LDWKWebView
+  https://github.com/CocoaPods/Specs.git:
+    - ReactiveObjC
+
+SPEC CHECKSUMS:
+  LDWKWebView: 7aee970ab1c57098c49539a4e4d382f3e52bce6c
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+
+PODFILE CHECKSUM: dcf554c28f94011b70632b1d08a2e2daaad0f357
+
+COCOAPODS: 1.8.4

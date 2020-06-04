@@ -1,0 +1,6 @@
+framework module LDWKWebView {
+  umbrella header "LDWKWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}
