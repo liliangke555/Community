@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NetghborsViewModel : NSObject
+@interface NetghborsViewModel : NSObject<UITableViewDelegate,UITableViewDataSource>
 
 + (void)refreshWithCallBack:(void(^)(NSArray *))callBack;
++ (void)refreshDataSource;
+- (void)didClickWebView:(void(^)(void))didClick;
 
 @end
 

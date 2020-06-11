@@ -163,8 +163,19 @@ static CGFloat const buttonWidth = 100;
     //边框宽度
     CGContextSetLineWidth(context, 0.0);
     CGContextMoveToPoint(context, R, R);
+    UIColor *color = nil;
+    if (@available(iOS 13.0, *)) {
+        color = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor systemGray4Color];
+            }
+            return RGBACOLOR(223, 243, 226, 1);
+        }];
+    } else {
+        color = RGBACOLOR(223, 243, 226, 1);
+    }
     //填充颜色
-    CGContextSetFillColorWithColor(context, RGBACOLOR(223, 243, 226, 1).CGColor);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextAddArc(context, R, R, R, 0, M_PI, 1);//如果圆弧是顺时针画的，“clockwise”是1，否则是0;
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFillStroke);

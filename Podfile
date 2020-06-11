@@ -8,6 +8,9 @@ use_frameworks!
 target 'Community' do
 
 pod 'ReactiveObjC', '~> 3.1.0'
+pod 'YBImageBrowser', '~> 3.0.9'
+pod 'YBImageBrowser/Video'
+pod 'LDImagePickerContrller'
 pod 'LDWKWebView'
 
 end

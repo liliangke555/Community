@@ -26,7 +26,6 @@
 - (void)setUpView
 {
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.tableView.frame), 64)];
-    [titleView setBackgroundColor:[UIColor whiteColor]];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, CGRectGetMidY(titleView.bounds) - 28, CGRectGetWidth(titleView.bounds)- 32, 20)];
     [titleLabel setText:_titleString];
     [titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
@@ -39,6 +38,16 @@
     bottomView.backgroundColor = [UIColor whiteColor];
     [titleView addSubview:bottomView];
     
+    if (@available(iOS 13.0, *)) {
+        [titleView setBackgroundColor:[UIColor systemBackgroundColor]];
+        [titleLabel setTextColor:[UIColor labelColor]];
+        [bottomView setBackgroundColor:[UIColor systemBackgroundColor]];
+    } else {
+        // Fallback on earlier versions
+        [titleView setBackgroundColor:[UIColor whiteColor]];
+        [titleLabel setTextColor:[UIColor whiteColor]];
+        [bottomView setBackgroundColor:[UIColor whiteColor]];
+    }
     
     [self.tableView setTableHeaderView:titleView];
 }

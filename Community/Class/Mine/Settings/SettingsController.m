@@ -8,6 +8,7 @@
 
 #import "SettingsController.h"
 #import "LDSettingsCell.h"
+#import <SDWebImage/SDImageCache.h>
 
 @interface SettingsController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UIButton * button;
@@ -64,7 +65,11 @@
     }
     if (indexPath.row == 2) {
         cell.textLabel.text = @"清理缓存";
-        cell.detailTextLabel.text = @"123MB";
+        NSUInteger bytesCache = [[SDImageCache sharedImageCache] totalDiskSize];
+        //换算成 MB (注意iOS中的字节之间的换算是1000不是1024)
+        float MBCache = bytesCache/1000.0f/1000.0f;
+        NSString*str = [NSString stringWithFormat:@"%.2fMB", MBCache];
+        cell.detailTextLabel.text = str;
     }
     if (indexPath.row == 3) {
         cell.textLabel.text = @"检测更新";
@@ -73,6 +78,41 @@
         cell.textLabel.text = @"关于360社区";
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 2) {
+        NSUInteger bytesCache = [[SDImageCache sharedImageCache] totalDiskSize];
+        NSString *string = nil;
+        if (bytesCache == 0) {
+            string = @"还没有缓存,不需要清理哦!";
+        } else {
+            //换算成 MB (注意iOS中的字节之间的换算是1000不是1024)
+            float MBCache = bytesCache/1000.0f/1000.0f;
+            string = [NSString stringWithFormat:@"缓存大小%.2fM.是否清除缓存?",MBCache];
+        }
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@""
+                                                                       message:string
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        __weak typeof(self)weakSelf = self;
+        if (bytesCache != 0) {
+            UIAlertAction *yesaction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[SDImageCache sharedImageCache] clearMemory];
+                [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
+                    [weakSelf.tableView reloadData];
+                }];
+            }];
+            [alert addAction:yesaction];
+        }
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (void)viewWillLayoutSubviews

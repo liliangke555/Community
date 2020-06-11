@@ -9,10 +9,9 @@
 #import "CommunityBaseController.h"
 #import "CommunutyTitleView.h"
 #import "CommunityDetailsCell.h"
+#import "LDWebViewController.h"
 
 @interface CommunityBaseController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
-
-@property (strong, nonatomic) UITableView * tableView;
 
 @end
 
@@ -26,6 +25,10 @@
     [self.tableView setTableHeaderView:titleView];
     self.headerView = titleView;
 }
+- (void)selectedImageIndex:(NSInteger)index row:(NSInteger)row
+{
+    
+}
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -34,57 +37,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return self.dataSource.count;
     return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CommunityDetailsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailsCell"];
-    
-    if (indexPath.row % 5 == 0) {
-        cell.isWeb = YES;
-    } else {
-        cell.isWeb = NO;
-        if (indexPath.row % 5 == 1) {
-            cell.imageArray  = [NSMutableArray arrayWithArray:@[
-                    [UIImage imageNamed:@"WechatIMG874"],
-                ]];
-        }
-        if (indexPath.row % 5 == 2) {
-            cell.imageArray  = [NSMutableArray arrayWithArray:@[
-                    [UIImage imageNamed:@"海报2"],
-            ]];
-        }
-        if (indexPath.row % 5 == 3) {
-            cell.imageArray  = [NSMutableArray arrayWithArray:@[
-                    [UIImage imageNamed:@"海报2"],
-                    [UIImage imageNamed:@"WechatIMG874"],
-                    [UIImage imageNamed:@"WechatIMG875"],
-                    [UIImage imageNamed:@"WechatIMG876"],
-                    [UIImage imageNamed:@"WechatIMG877"],
-                    [UIImage imageNamed:@"WechatIMG880"],
-                    [UIImage imageNamed:@"WechatIMG881"],
-                    [UIImage imageNamed:@"WechatIMG931"],
-                    [UIImage imageNamed:@"WechatIMG873"],
-            ]];
-        }
-        if (indexPath.row % 5 == 4) {
-            cell.imageArray  = [NSMutableArray arrayWithArray:@[
-                    [UIImage imageNamed:@"海报2"],
-                    [UIImage imageNamed:@"WechatIMG874"],
-                    [UIImage imageNamed:@"WechatIMG875"],
-                    [UIImage imageNamed:@"WechatIMG876"],
-            ]];
-        }
-    }
-    return cell;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CommunityDetailsCell *cell = (CommunityDetailsCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-
-    return (cell.detailHeight + 110 + cell.imageHeight);
+    return [UITableViewCell new];
 }
 #pragma mark - Getter
 

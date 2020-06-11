@@ -39,7 +39,7 @@
 {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(16, 84, 100, 24)];
     [label setFont:[UIFont boldSystemFontOfSize:24]];
-    [label setTextColor:RGBACOLOR(48, 51, 49, 1)];
+//    [label setTextColor:[UIColor sys]];
     [label setText:@"大菠萝"];
     [self addSubview:label];
     self.nameLabel = label;

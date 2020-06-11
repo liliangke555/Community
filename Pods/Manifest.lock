@@ -1,21 +1,46 @@
 PODS:
-  - LDWKWebView (0.0.1)
+  - LDImagePickerContrller (0.1.1)
+  - LDWKWebView (0.0.2)
   - ReactiveObjC (3.1.1)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - YBImageBrowser (3.0.9):
+    - YBImageBrowser/Core (= 3.0.9)
+  - YBImageBrowser/Core (3.0.9):
+    - SDWebImage (>= 5.0.0)
+    - YYImage
+  - YBImageBrowser/Video (3.0.9):
+    - YBImageBrowser/Core
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
+  - LDImagePickerContrller
   - LDWKWebView
   - ReactiveObjC (~> 3.1.0)
+  - YBImageBrowser (~> 3.0.9)
+  - YBImageBrowser/Video
 
 SPEC REPOS:
   "git@github.com:liliangke555/LookDoorSpecs.git":
+    - LDImagePickerContrller
     - LDWKWebView
   https://github.com/CocoaPods/Specs.git:
     - ReactiveObjC
+    - SDWebImage
+    - YBImageBrowser
+    - YYImage
 
 SPEC CHECKSUMS:
-  LDWKWebView: 7aee970ab1c57098c49539a4e4d382f3e52bce6c
+  LDImagePickerContrller: 9cbc086bf06b32fcf1408f6402584273132649ba
+  LDWKWebView: 003091b2200e58b025d89f83a83d1217c7865b6d
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: dcf554c28f94011b70632b1d08a2e2daaad0f357
+PODFILE CHECKSUM: 023032318255407a87e3a746c12050bfcda78edb
 
 COCOAPODS: 1.8.4

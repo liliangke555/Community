@@ -81,7 +81,7 @@ static NSString * const KEstimatedProgress = @"estimatedProgress";
 
 + (NSString *)getCurrentVersion
 {
-    return @"0.2.6";
+    return @"0.0.2";
 }
 
 - (void)setupViews
@@ -91,7 +91,7 @@ static NSString * const KEstimatedProgress = @"estimatedProgress";
     //设置KYE标识
     CGFloat tempY = 0;
     CGFloat statusH = 0;
-    if (![UIApplication sharedApplication].isStatusBarHidden) {
+    if ([UIApplication sharedApplication].isStatusBarHidden) {
         statusH = 20;
     }
     if (self.navigationController.navigationBar &&!self.navigationController.navigationBarHidden) {
@@ -104,7 +104,7 @@ static NSString * const KEstimatedProgress = @"estimatedProgress";
     }
     self.view.backgroundColor = [UIColor whiteColor];
     UILabel *infoLab = [[UILabel alloc] initWithFrame:CGRectMake(0, tempY, [UIScreen mainScreen].bounds.size.width, 30)];
-    infoLab.text = @"网页由www.ky-express.com提供";
+    infoLab.text = @"网页由守望领域提供";
     infoLab.textAlignment = NSTextAlignmentCenter;
     infoLab.textColor = KColorValue(0x4D317C);
     infoLab.font = [UIFont systemFontOfSize:12];

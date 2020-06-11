@@ -10,6 +10,7 @@
 #import "NSString+StringSize.h"
 
 #import "CommunityImageCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CommunityDetailsCell ()
 
@@ -25,14 +26,18 @@
 @property (strong, nonatomic) CommunityImageView * imageViewData;
 @property (strong, nonatomic) CommunityWebView * webView;
 
+@property (nonatomic, copy) void(^didSelected)(UICollectionView *collectionView,NSInteger);
+
 @end
 
 static CGFloat const NameFont = 16.0f;
 static CGFloat const realNameHeight = 12.0f;
+static CGFloat const realNameWidth = 56.0f;
 static CGFloat const headerImageSize = 32.0f;
 static CGFloat const DetailFont = 14.0f;
 static CGFloat const TimeFont = 12.0f;
 static CGFloat const LeftSpacing = 16.0f;
+static CGFloat const ImageClearance = 4.0f;
 
 @implementation CommunityDetailsCell
 #pragma mark - init
@@ -72,7 +77,7 @@ static CGFloat const LeftSpacing = 16.0f;
     [self addSubview:nameLabel];
     self.nameLabel = nameLabel;
     [nameLabel setFont:[UIFont boldSystemFontOfSize:NameFont]];
-    self.nameString = @"大菠萝的大菠萝";
+    self.nameString = @"🍍的大菠萝";
     
     // 已实名
     UIButton *realButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -101,7 +106,7 @@ static CGFloat const LeftSpacing = 16.0f;
     [self addSubview:time];
     self.timeLabel  = time;
     [time setTextAlignment:NSTextAlignmentRight];
-    self.timeString = @"9小时前";
+    self.timeString = @"4小时前";
     
     UILabel *details = [[UILabel alloc] init];
     [self addSubview:details];
@@ -179,28 +184,55 @@ static CGFloat const LeftSpacing = 16.0f;
     CommunityImageView *view = [[CommunityImageView alloc] init];
     [self addSubview:view];
     self.imageViewData = view;
+    __weak typeof(self)weakSelf = self;
+    [view selectedReviewImage:^(UIImageView *imageView,NSInteger index) {
+        if (weakSelf.didSelected) {
+            weakSelf.didSelected(view.coll,index);
+        }
+    }];
     
     CommunityWebView *webView = [[CommunityWebView alloc] init];
     [self addSubview:webView];
     self.webView = webView;
     webView.hidden = YES;
+
+    [webView setDidClick:^{
+        if (weakSelf.didClickWeb) {
+            weakSelf.didClickWeb();
+        }
+    }];
+}
+
+- (id)viewAtIndex:(NSInteger)index
+{
+    CommunityImageCell *cell = (CommunityImageCell *)[self.imageViewData.coll cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    return cell ? cell.backImageView : nil;
+}
+
+- (void)didReviewImage:(void (^)(UICollectionView *,NSInteger))review
+{
+    _didSelected = review;
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
+    CGFloat timeWidth = [_timeString getWidthWithHeight:24 font:TimeFont];
+    CGFloat maxWidth = SCREEN_WIDTH - headerImageSize - timeWidth - LeftSpacing * 3;
+    if (_isReal) {
+        maxWidth -= realNameWidth;
+    }
+    CGFloat nameWidth = [self.nameString getWidthWithHeight:24 font:NameFont];
+    nameWidth = nameWidth > maxWidth ? maxWidth : nameWidth;
+    
     self.headerImage.frame = CGRectMake(LeftSpacing, 16, headerImageSize, headerImageSize);
     
-    CGFloat nameWidth = [self.nameString getWidthWithHeight:24 font:NameFont];
     self.nameLabel.frame = CGRectMake(CGRectGetMaxX(self.headerImage.frame) + 8, CGRectGetMidY(self.headerImage.frame) - 12, nameWidth, 24);
     
+    self.realButton.frame = CGRectMake(CGRectGetMaxX(self.nameLabel.frame), CGRectGetMidY(self.nameLabel.frame) - realNameHeight / 2.0f, realNameWidth, realNameHeight);
     
-    self.realButton.frame = CGRectMake(CGRectGetMaxX(self.nameLabel.frame), CGRectGetMidY(self.nameLabel.frame) - realNameHeight / 2.0f, 56, realNameHeight);
-    
-    CGFloat timeWidth = [self.timeString getWidthWithHeight:24 font:TimeFont];
     self.timeLabel.frame = CGRectMake(CGRectGetWidth(self.frame) - timeWidth - 16, CGRectGetMidY(self.headerImage.frame) - 12, timeWidth, 24);
-    
     
     self.detailsLabel.frame = CGRectMake(CGRectGetMinX(self.headerImage.frame), CGRectGetMaxY(self.headerImage.frame) + 8, CGRectGetWidth(self.frame) - 32, _detailHeight);
     
@@ -273,27 +305,35 @@ static CGFloat const LeftSpacing = 16.0f;
 {
     _timeString = timeString;
     self.timeLabel.text = timeString;
+    
 }
 - (void)setImageArray:(NSMutableArray *)imageArray
 {
-    _imageArray = [imageArray mutableCopy];
-    self.imageViewData.iamgeArray = imageArray;
-    if (imageArray.count == 1) {
-        UIImage *image = imageArray[0];
-        CGSize imageSize = image.size;
-        if (imageSize.width > imageSize.height) {
+    if (!imageArray || imageArray.count <= 0) {
+        _imageHeight = 0.0f;
+        return;
+    }
+//    __weak typeof(self)weakSelf = self;
+    self.imageViewData.imageArray = imageArray;
+    _imageArray = imageArray;
+    
+//    self.imageViewData.imageArray = imageArray;
+    if (self.imageArray.count == 1) {
+//        UIImage *image = self.imageArray[0];
+//        CGSize imageSize = image.size;
+//        if (imageSize.width > imageSize.height) {
             CGFloat maxWidth = (SCREEN_WIDTH - (LeftSpacing * 2)) / 2.0f;
-            _imageHeight = maxWidth * imageSize.height / imageSize.width + 8;
-        } else {
-            CGFloat maxWidth = (SCREEN_WIDTH - (LeftSpacing * 2)) / 2.0f + 8;
+//            _imageHeight = maxWidth * imageSize.height / imageSize.width + 8;
+//        } else {
+//            CGFloat maxWidth = (SCREEN_WIDTH - (LeftSpacing * 2)) / 2.0f + 8;
             _imageHeight = maxWidth;
-        }
-    } else if (imageArray.count == 2 || imageArray.count == 3) {
+//        }
+    } else if (self.imageArray.count == 2 || self.imageArray.count == 3) {
         _imageHeight = (SCREEN_WIDTH - (LeftSpacing * 2) - 8) / 3.0f + 8;
-    } else if (imageArray.count == 4 || imageArray.count <= 6){
-        _imageHeight = ((SCREEN_WIDTH - LeftSpacing * 2 - 8) / 3.0f) * 2 + 4 + 8;
+    } else if (self.imageArray.count == 4 || self.imageArray.count <= 6){
+        _imageHeight = ((SCREEN_WIDTH - LeftSpacing * 2 - 8) / 3.0f) * 2 + ImageClearance + 8;
     } else {
-        _imageHeight = ((SCREEN_WIDTH - LeftSpacing * 2 - 8) / 3.0f) * 3 + 8 + 8;
+        _imageHeight = ((SCREEN_WIDTH - LeftSpacing * 2 - 8) / 3.0f) * 3 + ImageClearance * 2 + 8;
     }
 }
 
@@ -320,6 +360,17 @@ static CGFloat const LeftSpacing = 16.0f;
     self.webView.imageString = imageString;
 }
 
+- (void)setDidClickWeb:(void (^)(void))didClickWeb
+{
+    _didClickWeb = didClickWeb;
+}
+
+- (void)setIsReal:(BOOL)isReal
+{
+    _isReal = isReal;
+    self.realButton.hidden = !isReal;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -328,11 +379,11 @@ static CGFloat const LeftSpacing = 16.0f;
 
 @end
 
-#pragma mark -
+#pragma mark - Image CollectionView
 
 @interface CommunityImageView ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) UICollectionView * coll;
+@property (nonatomic, copy) void(^didSelectedIndex)(UIImageView *,NSInteger);
 
 @end
 
@@ -350,9 +401,6 @@ static CGFloat const LeftSpacing = 16.0f;
 - (void)setupView
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    CGFloat itemW = (SCREEN_WIDTH - 5*16) / 4;
-//    CGFloat itemH = CGRectGetHeight(self.frame) - 26;
-//    flowLayout.itemSize = CGSizeMake(itemW, itemH);
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 16, 0, 16);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumLineSpacing = 4;
@@ -360,7 +408,6 @@ static CGFloat const LeftSpacing = 16.0f;
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame)) collectionViewLayout:flowLayout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
-//    collectionView.la
     if (@available(iOS 13.0, *)) {
         collectionView.backgroundColor = [UIColor systemBackgroundColor];
     } else {
@@ -372,42 +419,50 @@ static CGFloat const LeftSpacing = 16.0f;
     [self addSubview:collectionView];
     self.coll = collectionView;
 }
+- (void)selectedReviewImage:(void (^)(UIImageView *imageView,NSInteger))review
+{
+    _didSelectedIndex = review;
+}
 #pragma mark - UICollectionViewDataSource
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.iamgeArray.count == 1) {
-        CGFloat imageHeight = 0;
+    if (self.imageArray.count == 1) {
+//        CGFloat imageHeight = 0;
         CGFloat maxWidth = (SCREEN_WIDTH - (LeftSpacing * 2)) / 2.0f;
-        UIImage *image = self.iamgeArray[indexPath.row];
-            CGSize imageSize = image.size;
-            if (imageSize.width > imageSize.height) {
-                imageHeight = maxWidth * imageSize.height  / imageSize.width;
-            } else {
-                imageHeight = maxWidth;
-                maxWidth = imageHeight * imageSize.width  / imageSize.height;
-            }
-        return CGSizeMake(maxWidth, imageHeight);
+//        UIImage *image = self.imageArray[indexPath.row];
+//            CGSize imageSize = image.size;
+//            if (imageSize.width > imageSize.height) {
+//                imageHeight = maxWidth * imageSize.height  / imageSize.width;
+//            } else {
+//                imageHeight = maxWidth;
+//                maxWidth = imageHeight * imageSize.width  / imageSize.height;
+//            }
+        return CGSizeMake(maxWidth, maxWidth);
     }
-    CGFloat width = (SCREEN_WIDTH - 32 - 8) / 3.0;
+    CGFloat width = (SCREEN_WIDTH - LeftSpacing * 2 - ImageClearance * 2) / 3.0;
     return CGSizeMake(width, width);
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.iamgeArray.count > 9 ? 9 : self.iamgeArray.count;
+    return self.imageArray.count > 9 ? 9 : self.imageArray.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CommunityImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CommunityImageCell" forIndexPath:indexPath];
-    cell.image = self.iamgeArray[indexPath.row];
+    NSString *urlString = self.imageArray[indexPath.item];
+    [cell setData:urlString];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-
+    CommunityImageCell *cell = (CommunityImageCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (self.didSelectedIndex) {
+        self.didSelectedIndex(cell.backImageView,indexPath.item);
+    }
 }
 #pragma mark - Layout
 - (void)layoutSubviews
@@ -415,9 +470,10 @@ static CGFloat const LeftSpacing = 16.0f;
     [super layoutSubviews];
     self.coll.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
 }
-- (void)setIamgeArray:(NSMutableArray *)iamgeArray
+
+- (void)setImageArray:(NSMutableArray *)imageArray
 {
-    _iamgeArray = [iamgeArray mutableCopy];
+    _imageArray = [imageArray mutableCopy];
     [self.coll reloadData];
 }
 
@@ -452,6 +508,7 @@ static CGFloat const LeftSpacing = 16.0f;
     }
     [self.layer setCornerRadius:5.0f];
     self.clipsToBounds = YES;
+    [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickView:)]];
     
     UIImageView *imageView = [[UIImageView alloc] init];
     [self addSubview:imageView];
@@ -472,12 +529,21 @@ static CGFloat const LeftSpacing = 16.0f;
     [title setText:@"风雨同路30年 伴您同行真经典\n昔日中文金曲的日文原唱 濳伏多年 光华再现"];
 }
 
+- (void)didClickView:(UITapGestureRecognizer *)sender
+{
+    if (self.didClick) {
+        self.didClick();
+    }
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     self.bimageView.frame = CGRectMake(0, 0, CGRectGetHeight(self.frame), CGRectGetHeight(self.frame));
     self.titleLabel.frame = CGRectMake(CGRectGetMaxX(self.bimageView.frame) + 8, 0, CGRectGetWidth(self.frame) - 8 - CGRectGetHeight(self.frame), CGRectGetHeight(self.frame));
 }
+
+#pragma mark - Setter
 
  - (void)setTitleString:(NSString *)titleString
 {
@@ -488,5 +554,9 @@ static CGFloat const LeftSpacing = 16.0f;
 {
     _imageString = imageString;
     self.bimageView.image = [UIImage imageNamed:imageString];
+}
+- (void)setDidClick:(void (^)(void))didClick
+{
+    _didClick = didClick;
 }
 @end

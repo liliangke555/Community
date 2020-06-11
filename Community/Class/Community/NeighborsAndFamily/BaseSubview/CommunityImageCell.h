@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CommunityImageCell : UICollectionViewCell
 
 @property (strong, nonatomic) UIImage * image;
+@property (strong, nonatomic) UIImageView * backImageView;
+
+@property (strong, nonatomic) id data;
 
 @end
 

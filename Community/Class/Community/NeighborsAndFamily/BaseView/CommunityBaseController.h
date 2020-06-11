@@ -12,9 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 @class CommunutyTitleView;
 @interface CommunityBaseController : LDBaseViewController
 
+@property (strong, nonatomic) UITableView * tableView;
 @property (strong, nonatomic) CommunutyTitleView * headerView;
 @property (strong, nonatomic) NSMutableArray * headerData;
 @property (strong, nonatomic) NSMutableArray * dataSource;
+
+- (void)selectedImageIndex:(NSInteger)index row:(NSInteger)row;
 
 @end
 

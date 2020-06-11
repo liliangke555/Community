@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CommunityDetailsCell : UITableViewCell
 
 @property (nonatomic, copy) NSString *nameString;
+@property (assign, nonatomic) BOOL isReal;
 @property (nonatomic, copy) NSString *timeString;
 @property (nonatomic, copy) NSString *detailString;
 @property (assign, nonatomic) CGFloat detailHeight;
@@ -28,11 +29,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *imageString;
 @property (nonatomic, copy) NSString *titleString;
 
+@property (nonatomic, copy) void(^didClickWeb)(void);
+
+- (void)didReviewImage:(void(^)(UICollectionView *collectionView,NSInteger index))review;
+- (id)viewAtIndex:(NSInteger)index;
+
 @end
 
 @interface CommunityImageView : UIView
 
-@property (strong, nonatomic) NSMutableArray * iamgeArray;
+@property (strong, nonatomic) UICollectionView * coll;
+@property (strong, nonatomic) NSMutableArray * imageArray;
+- (void)selectedReviewImage:(void(^)(UIImageView *imageView,NSInteger index))review;
 
 @end
 
@@ -40,6 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *imageString;
 @property (nonatomic, copy) NSString *titleString;
+
+@property (nonatomic, copy) void(^didClick)(void);
 
 @end
 

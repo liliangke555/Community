@@ -10,6 +10,7 @@
 #import "LDCommunitySegment.h"
 #import "NeighborsController.h"
 #import "FamilyController.h"
+#import "ReleaseCommunityController.h"
 
 @interface CommunityViewController ()<UIScrollViewDelegate>
 
@@ -31,9 +32,11 @@ static CGFloat const sendButtonSize = 50.0f;
     // Do any additional setup after loading the view.
     if (@available(iOS 13.0, *)) {
         self.view.backgroundColor = [UIColor systemBackgroundColor];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor systemBackgroundColor]];
     } else {
         // Fallback on earlier versions
         self.view.backgroundColor = [UIColor whiteColor];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     }
     [self setupView];
 }
@@ -41,12 +44,14 @@ static CGFloat const sendButtonSize = 50.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    self.navigationController.navigationBar.translucent = YES;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.navigationController.navigationBar.translucent = NO;
 }
 #pragma mark - UIScrollViewDelegate
 
@@ -77,7 +82,9 @@ static CGFloat const sendButtonSize = 50.0f;
     self.segment = segment;
     
     [self.scrollView addSubview:self.neighbors.view];
+    [self addChildViewController:self.neighbors];
     [self.scrollView addSubview:self.family.view];
+    [self addChildViewController:self.family];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = nil;
@@ -122,6 +129,8 @@ static CGFloat const sendButtonSize = 50.0f;
         return;
     }
     NSLog(@"---点击了发布按钮---");
+    ReleaseCommunityController *vc = [[ReleaseCommunityController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /// 判断拖拽边界。 不让button拖出屏幕视线

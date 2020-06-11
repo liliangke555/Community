@@ -8,9 +8,12 @@
 
 #import "NeighborsController.h"
 #import "NetghborsViewModel.h"
+#import "LDWebViewController.h"
 
 
 @interface NeighborsController ()
+
+@property (strong, nonatomic) NetghborsViewModel * viewModel;
 
 @end
 
@@ -21,6 +24,9 @@
     // Do any additional setup after loading the view.
    
     [self refreshHeaderData];
+    
+    self.tableView.delegate = self.viewModel;
+    self.tableView.dataSource = self.viewModel;
 }
 
 -(void)refreshHeaderData
@@ -29,6 +35,24 @@
     [NetghborsViewModel refreshWithCallBack:^(NSArray * _Nonnull data) {
         weakSelf.headerData = [NSMutableArray arrayWithArray:data];
     }];
+}
+
+#pragma mark - Getter
+
+- (NetghborsViewModel *)viewModel
+{
+    if (!_viewModel) {
+        _viewModel = [[NetghborsViewModel alloc] init];
+        __weak typeof(self)weakSelf = self;
+        [_viewModel didClickWebView:^{
+            LDWebViewController *vc = [[LDWebViewController alloc] init];
+            vc.urlStr = @"https://rsdsd.cc/forum.php?mod=viewthread&tid=1825&extra=page%3D1%26filter%3Dtypeid%26typeid%3D23";
+//            [weakSelf presentViewController:vc animated:YES completion:nil];
+            vc.hookAjax = YES;
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+        }];
+    }
+    return _viewModel;
 }
 
 /*
