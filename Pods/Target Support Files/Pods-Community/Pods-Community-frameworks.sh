@@ -161,20 +161,24 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/engine/Flutter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LDImagePickerContrller/LDImagePickerContrller.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LDWKWebView/LDWKWebView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YBImageBrowser/YBImageBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
+  install_framework "${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/App.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/engine/Flutter.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LDImagePickerContrller/LDImagePickerContrller.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LDWKWebView/LDWKWebView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YBImageBrowser/YBImageBrowser.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework"
+  install_framework "${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/App.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

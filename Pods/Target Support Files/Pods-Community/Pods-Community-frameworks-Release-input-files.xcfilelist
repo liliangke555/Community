@@ -1,7 +1,9 @@
 ${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks.sh
+${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/engine/Flutter.framework
 ${BUILT_PRODUCTS_DIR}/LDImagePickerContrller/LDImagePickerContrller.framework
 ${BUILT_PRODUCTS_DIR}/LDWKWebView/LDWKWebView.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/YBImageBrowser/YBImageBrowser.framework
 ${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework
+${PODS_ROOT}/../../flutter_module_com/.ios/Flutter/App.framework

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0329396371FAEEB453133AE2 /* Pods_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E38174518A694C30E38AA8 /* Pods_Community.framework */; };
 		048C798E2480F07E0073FA06 /* CoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C798D2480F07E0073FA06 /* CoreTextView.m */; };
 		048C79922480F8C40073FA06 /* CTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C79912480F8C40073FA06 /* CTFrameParserConfig.m */; };
 		048C79952480F9940073FA06 /* CTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C79942480F9940073FA06 /* CTFrameParser.m */; };
@@ -57,6 +58,8 @@
 		04C3CA3624907BE6000EA08F /* HomeHeaderTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CA3524907BE6000EA08F /* HomeHeaderTimeView.m */; };
 		04C3CA39249208C3000EA08F /* UIButton+CustomIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CA38249208C3000EA08F /* UIButton+CustomIcon.m */; };
 		04C3CA3C24921281000EA08F /* NSString+Lunar.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CA3B24921281000EA08F /* NSString+Lunar.m */; };
+		04C3CA4F24933242000EA08F /* HomeSegmentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CA4E24933242000EA08F /* HomeSegmentScrollView.m */; };
+		04C3CA522493335C000EA08F /* HomeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CA512493335C000EA08F /* HomeTableView.m */; };
 		05167E1824261A760067A2BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05167E1724261A760067A2BA /* AppDelegate.m */; };
 		05167E1B24261A760067A2BA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05167E1A24261A760067A2BA /* SceneDelegate.m */; };
 		05167E1E24261A760067A2BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05167E1D24261A760067A2BA /* ViewController.m */; };
@@ -101,7 +104,6 @@
 		1BE8F9D624502B31002E14FC /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8F9D524502B31002E14FC /* MineHeaderView.m */; };
 		1BE8F9DA24503576002E14FC /* UIView+CornerCliper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8F9D924503576002E14FC /* UIView+CornerCliper.m */; };
 		1BE8F9DF24504D64002E14FC /* MessageCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8F9DE24504D64002E14FC /* MessageCenterController.m */; };
-		1FB90009E5105363183EC94E /* Pods_Community.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E34076A42C1CBB348CB0C0 /* Pods_Community.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +192,10 @@
 		04C3CA38249208C3000EA08F /* UIButton+CustomIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CustomIcon.m"; sourceTree = "<group>"; };
 		04C3CA3A24921281000EA08F /* NSString+Lunar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Lunar.h"; sourceTree = "<group>"; };
 		04C3CA3B24921281000EA08F /* NSString+Lunar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Lunar.m"; sourceTree = "<group>"; };
+		04C3CA4D24933242000EA08F /* HomeSegmentScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSegmentScrollView.h; sourceTree = "<group>"; };
+		04C3CA4E24933242000EA08F /* HomeSegmentScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSegmentScrollView.m; sourceTree = "<group>"; };
+		04C3CA502493335C000EA08F /* HomeTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableView.h; sourceTree = "<group>"; };
+		04C3CA512493335C000EA08F /* HomeTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableView.m; sourceTree = "<group>"; };
 		05167E1324261A760067A2BA /* Community.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Community.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05167E1624261A760067A2BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05167E1724261A760067A2BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -279,9 +285,9 @@
 		1BE8F9D924503576002E14FC /* UIView+CornerCliper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerCliper.m"; sourceTree = "<group>"; };
 		1BE8F9DD24504D64002E14FC /* MessageCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCenterController.h; sourceTree = "<group>"; };
 		1BE8F9DE24504D64002E14FC /* MessageCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCenterController.m; sourceTree = "<group>"; };
-		267867BF91EB7D9EBE1FC431 /* Pods-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community.release.xcconfig"; path = "Target Support Files/Pods-Community/Pods-Community.release.xcconfig"; sourceTree = "<group>"; };
-		44E34076A42C1CBB348CB0C0 /* Pods_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB8F1280F2B3A21C4FF75A6A /* Pods-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community.debug.xcconfig"; path = "Target Support Files/Pods-Community/Pods-Community.debug.xcconfig"; sourceTree = "<group>"; };
+		44E38174518A694C30E38AA8 /* Pods_Community.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Community.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B6B9987FF6E1D13292E2DE /* Pods-Community.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community.debug.xcconfig"; path = "Target Support Files/Pods-Community/Pods-Community.debug.xcconfig"; sourceTree = "<group>"; };
+		77C24569ABB23C18DD4F867D /* Pods-Community.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Community.release.xcconfig"; path = "Target Support Files/Pods-Community/Pods-Community.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,7 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FB90009E5105363183EC94E /* Pods_Community.framework in Frameworks */,
+				0329396371FAEEB453133AE2 /* Pods_Community.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +310,10 @@
 				048C798D2480F07E0073FA06 /* CoreTextView.m */,
 				04C3CA3424907BE6000EA08F /* HomeHeaderTimeView.h */,
 				04C3CA3524907BE6000EA08F /* HomeHeaderTimeView.m */,
+				04C3CA4D24933242000EA08F /* HomeSegmentScrollView.h */,
+				04C3CA4E24933242000EA08F /* HomeSegmentScrollView.m */,
+				04C3CA502493335C000EA08F /* HomeTableView.h */,
+				04C3CA512493335C000EA08F /* HomeTableView.m */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -538,6 +548,13 @@
 			path = TestFile;
 			sourceTree = "<group>";
 		};
+		04C3CA532493721C000EA08F /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		05167E0A24261A760067A2BA = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +562,7 @@
 				05167E1524261A760067A2BA /* Community */,
 				05167E1424261A760067A2BA /* Products */,
 				37DC506D62AFAD744B2243E5 /* Pods */,
-				AD94FD975F3C1416AF772915 /* Frameworks */,
+				8494E7AD715CBE2DBD860B12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -649,6 +666,7 @@
 		05371F792446EC5100285096 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				04C3CA532493721C000EA08F /* BaseView */,
 				05371F7C2446ECB000285096 /* LDBaseViewController.h */,
 				05371F7D2446ECB000285096 /* LDBaseViewController.m */,
 				048C799D24849C1F0073FA06 /* LDBaseTableController.h */,
@@ -1065,16 +1083,16 @@
 		37DC506D62AFAD744B2243E5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BB8F1280F2B3A21C4FF75A6A /* Pods-Community.debug.xcconfig */,
-				267867BF91EB7D9EBE1FC431 /* Pods-Community.release.xcconfig */,
+				49B6B9987FF6E1D13292E2DE /* Pods-Community.debug.xcconfig */,
+				77C24569ABB23C18DD4F867D /* Pods-Community.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AD94FD975F3C1416AF772915 /* Frameworks */ = {
+		8494E7AD715CBE2DBD860B12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				44E34076A42C1CBB348CB0C0 /* Pods_Community.framework */,
+				44E38174518A694C30E38AA8 /* Pods_Community.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1086,11 +1104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05167E2C24261A760067A2BA /* Build configuration list for PBXNativeTarget "Community" */;
 			buildPhases = (
-				F0E7E8141A1A888EF2C0E5CD /* [CP] Check Pods Manifest.lock */,
+				BA09B7E38AF61549909BDE3E /* [CP] Check Pods Manifest.lock */,
+				3D7A2F18303B22C767400C7A /* [CP-User] Run Flutter Build Script */,
 				05167E0F24261A760067A2BA /* Sources */,
 				05167E1024261A760067A2BA /* Frameworks */,
 				05167E1124261A760067A2BA /* Resources */,
-				69336CC08BC706E7D7622A96 /* [CP] Embed Pods Frameworks */,
+				BDCC913CF51DD0648244017A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1162,24 +1181,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		69336CC08BC706E7D7622A96 /* [CP] Embed Pods Frameworks */ = {
+		3D7A2F18303B22C767400C7A /* [CP-User] Run Flutter Build Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"${SRCROOT}/../flutter_module_com/.metadata",
+				"${SRCROOT}/../flutter_module_com/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../flutter_module_com/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../flutter_module_com/.ios/Flutter/flutter_export_environment.sh",
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
+			name = "[CP-User] Run Flutter Build Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_module_com/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
-		F0E7E8141A1A888EF2C0E5CD /* [CP] Check Pods Manifest.lock */ = {
+		BA09B7E38AF61549909BDE3E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1201,6 +1219,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BDCC913CF51DD0648244017A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Community/Pods-Community-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1210,7 +1245,9 @@
 			files = (
 				04C3CA3C24921281000EA08F /* NSString+Lunar.m in Sources */,
 				058A1E7D2428688F0053DE23 /* HomePageViewController.m in Sources */,
+				04C3CA522493335C000EA08F /* HomeTableView.m in Sources */,
 				048C79CC248654AC0073FA06 /* CommunityBaseController.m in Sources */,
+				04C3CA4F24933242000EA08F /* HomeSegmentScrollView.m in Sources */,
 				0579987F2449A48000EDAE0D /* JsonUitls.m in Sources */,
 				0579987E2449A48000EDAE0D /* StringUtils.m in Sources */,
 				04C3C9D624877330000EA08F /* CommunityDetailsCell.m in Sources */,
@@ -1421,11 +1458,12 @@
 		};
 		05167E2D24261A760067A2BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB8F1280F2B3A21C4FF75A6A /* Pods-Community.debug.xcconfig */;
+			baseConfigurationReference = 49B6B9987FF6E1D13292E2DE /* Pods-Community.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3YCM7X5H7;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/Class/Marco/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";
@@ -1443,11 +1481,12 @@
 		};
 		05167E2E24261A760067A2BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 267867BF91EB7D9EBE1FC431 /* Pods-Community.release.xcconfig */;
+			baseConfigurationReference = 77C24569ABB23C18DD4F867D /* Pods-Community.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B3YCM7X5H7;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/Class/Marco/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";

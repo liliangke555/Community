@@ -352,6 +352,7 @@
     UILabel *detail = [[UILabel alloc] init];
     [self addSubview:detail];
     self.detail = detail;
+    [detail setNumberOfLines:0];
     [detail setFont:[UIFont systemFontOfSize:14]];
     
     UIView *back = [[UIView alloc] init];
@@ -392,9 +393,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.label.frame = CGRectMake(12, 16, CGRectGetWidth(self.frame) - 76, 24);
+    self.label.frame = CGRectMake(12, 16, CGRectGetWidth(self.frame) - 80, 24);
     
-    self.detail.frame = CGRectMake(CGRectGetMinX(self.label.frame), CGRectGetMaxY(self.label.frame) + 16, CGRectGetWidth(self.label.frame), 12);
+    self.detail.frame = CGRectMake(CGRectGetMinX(self.label.frame), CGRectGetMaxY(self.label.frame) + 8, CGRectGetWidth(self.label.frame), CGRectGetHeight(self.frame) - CGRectGetMaxY(self.label.frame) - 8);
     
     self.weekBackView.frame = CGRectMake(CGRectGetWidth(self.frame) - 80, 16, 64, 64);
     self.weekView.frame = CGRectMake(4, 4, 56, 56);
@@ -433,8 +434,11 @@
     }
     
     NSString *string = [NSString LunarForSolarYear:year Month:month Day:day];
+    NSString *rizhi = [NSString getRizhiWithdate:date];
     
-    self.detail.text = [NSString stringWithFormat:@"今天是%ld月%ld日，%@",month,day,string];
+    NSString *can = [NSString getshierjian:month string:rizhi];
+    
+    self.detail.text = [NSString stringWithFormat:@"今天是%ld月%ld日，%@\n%@",month,day,string,can];
     self.dayLabel.text = [NSString stringWithFormat:@"%ld",day];
     self.weekLabel.text = [arrWeek objectAtIndex:week-1];
 }

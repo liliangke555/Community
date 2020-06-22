@@ -1,4 +1,9 @@
 PODS:
+  - Flutter (1.0.0)
+  - fluttermodulecom (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - LDImagePickerContrller (0.1.1)
   - LDWKWebView (0.0.2)
   - ReactiveObjC (3.1.1)
@@ -17,6 +22,9 @@ PODS:
   - YYImage/Core (1.0.4)
 
 DEPENDENCIES:
+  - Flutter (from `../flutter_module_com/.ios/Flutter/engine`)
+  - fluttermodulecom (from `../flutter_module_com/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_module_com/.ios/Flutter/FlutterPluginRegistrant`)
   - LDImagePickerContrller
   - LDWKWebView
   - ReactiveObjC (~> 3.1.0)
@@ -33,7 +41,18 @@ SPEC REPOS:
     - YBImageBrowser
     - YYImage
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../flutter_module_com/.ios/Flutter/engine"
+  fluttermodulecom:
+    :path: "../flutter_module_com/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../flutter_module_com/.ios/Flutter/FlutterPluginRegistrant"
+
 SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  fluttermodulecom: 431c85749054b611b75c28c3db4a3ec635ea4f57
+  FlutterPluginRegistrant: d59dd07dd90e9c6430996073575a5bd1ea19677e
   LDImagePickerContrller: 9cbc086bf06b32fcf1408f6402584273132649ba
   LDWKWebView: 003091b2200e58b025d89f83a83d1217c7865b6d
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
@@ -41,6 +60,6 @@ SPEC CHECKSUMS:
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 023032318255407a87e3a746c12050bfcda78edb
+PODFILE CHECKSUM: 56751250aa28e1dc002db2fa3a823938d497f799
 
 COCOAPODS: 1.8.4

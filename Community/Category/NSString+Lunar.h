@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (Lunar)
 
 + (NSString *)LunarForSolarYear:(NSInteger)wCurYear Month:(NSInteger)wCurMonth Day:(NSInteger)wCurDay;
++ (NSString *)getRizhiWithdate:(NSDate *)date1;
++ (NSString*)getshierjian:(NSInteger)month string:(NSString*)rizhi;
 
 @end
 

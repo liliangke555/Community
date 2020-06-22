@@ -81,10 +81,10 @@ static CGFloat const sendButtonSize = 50.0f;
     }];
     self.segment = segment;
     
-    [self.scrollView addSubview:self.neighbors.view];
     [self addChildViewController:self.neighbors];
-    [self.scrollView addSubview:self.family.view];
+    [self.scrollView addSubview:self.neighbors.view];
     [self addChildViewController:self.family];
+    [self.scrollView addSubview:self.family.view];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *image = nil;

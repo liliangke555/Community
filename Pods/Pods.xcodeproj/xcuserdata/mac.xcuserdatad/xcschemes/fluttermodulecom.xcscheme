@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "438B238ACC7DF1178D1BCE1A31983146"
-               BuildableName = "ReactiveObjC.framework"
-               BlueprintName = "ReactiveObjC"
+               BlueprintIdentifier = "75D85358F6CF3778520E0C4310939B62"
+               BuildableName = "fluttermodulecom"
+               BlueprintName = "fluttermodulecom"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

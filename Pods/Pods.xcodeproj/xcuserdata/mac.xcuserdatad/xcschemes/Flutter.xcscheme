@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF92E621DD6A4CE66FFD35D54E7AED8D"
-               BuildableName = "LDWKWebView.framework"
-               BlueprintName = "LDWKWebView"
+               BlueprintIdentifier = "1EFDDC32A34D56D411E640A81DCD9E73"
+               BuildableName = "Flutter"
+               BlueprintName = "Flutter"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
