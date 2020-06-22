@@ -1570,7 +1570,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/BasicModule/Config/PrefixHeader.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Community/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1593,7 +1593,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/BasicModule/Config/PrefixHeader.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Community/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
