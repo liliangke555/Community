@@ -26,7 +26,7 @@
 static CGFloat const sendButtonSize = 50.0f;
 
 @implementation CommunityViewController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -53,22 +53,6 @@ static CGFloat const sendButtonSize = 50.0f;
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     self.navigationController.navigationBar.translucent = NO;
 }
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    self.segment.contentOffX = scrollView.contentOffset.x / SCREEN_WIDTH;
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    //ScrollView中根据滚动距离来判断当前页数
-    int page = (int)scrollView.contentOffset.x/SCREEN_WIDTH;
-    
-    // 设置页码
-    self.segment.selectedIndex = page;
-}
-
 #pragma mark - setView
 
 - (void)setupView
@@ -105,10 +89,7 @@ static CGFloat const sendButtonSize = 50.0f;
     [button addTarget:self action:@selector(dragMoving:withEvent:)forControlEvents:UIControlEventTouchDragInside];
     [button addTarget:self action:@selector(sendButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 }
-
-#pragma mark - Touch
-
-#pragma mark - Helper Handle
+#pragma mark - IBActions
 
 /// 按钮拖拽事件
 /// @param c 按钮对象
@@ -132,7 +113,7 @@ static CGFloat const sendButtonSize = 50.0f;
     ReleaseCommunityController *vc = [[ReleaseCommunityController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+#pragma mark - Private
 /// 判断拖拽边界。 不让button拖出屏幕视线
 /// @param sender 发布button
 - (void)changeButtonFrame:(UIButton *)sender
@@ -154,6 +135,21 @@ static CGFloat const sendButtonSize = 50.0f;
         sender.center = CGPointMake(centerX, centerY);
     }];
     sender.selected = NO;
+}
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    self.segment.contentOffX = scrollView.contentOffset.x / SCREEN_WIDTH;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //ScrollView中根据滚动距离来判断当前页数
+    int page = (int)scrollView.contentOffset.x/SCREEN_WIDTH;
+    
+    // 设置页码
+    self.segment.selectedIndex = page;
 }
 
 #pragma mark - Getter

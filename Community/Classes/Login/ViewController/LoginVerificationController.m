@@ -23,7 +23,7 @@
 @end
 
 @implementation LoginVerificationController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -42,16 +42,16 @@
         weakSelf.loginButton.enabled = NO;
     };
 }
+#pragma mark - IBActions
+- (void)loginButtonAction:(UIButton *)sender
+{
+    [self.loginViewModel goVerificationLogin];
+}
 #pragma mark - LoginSelectorDelegate
 - (void)didSelectedIndex:(NSInteger)index
 {
     self.loginViewModel.viewType = index;
     [self.navigationController popViewControllerAnimated:YES];
-}
-#pragma mark - Event
-- (void)loginButtonAction:(UIButton *)sender
-{
-    [self.loginViewModel goVerificationLogin];
 }
 #pragma mark - Getter
 

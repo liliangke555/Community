@@ -35,6 +35,7 @@
 static NSInteger const MaxCount = 9;
 
 @implementation ReleaseCommunityController
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,6 +88,17 @@ static NSInteger const MaxCount = 9;
     [button setTitle:@"发布" forState:UIControlStateNormal];
     [button.layer setCornerRadius:5.0f];
 }
+#pragma mark - IBActions
+- (void)sendButtonAction:(UIButton *)sender
+{
+    __weak typeof(self)weakSelf = self;
+    [self.viewModel uploadDataCompletion:^(BOOL succeed) {
+        if (succeed) {
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+}
+#pragma mark - Private
 
 - (void)reviewImage:(NSInteger)index
 {
@@ -138,14 +150,14 @@ static NSInteger const MaxCount = 9;
     [alertVc addAction:cancelAction];
     [self presentViewController:alertVc animated:YES completion:nil];
 }
-- (void)sendButtonAction:(UIButton *)sender
-{
-    __weak typeof(self)weakSelf = self;
-    [self.viewModel uploadDataCompletion:^(BOOL succeed) {
-        if (succeed) {
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }
-    }];
+
+/// 打印图片名字
+- (void)printAssetsName:(NSArray *)assets {
+    NSString *fileName;
+    for (PHAsset *asset in assets) {
+        fileName = [asset valueForKey:@"filename"];
+        // NSLog(@"图片名字:%@",fileName);
+    }
 }
 #pragma mark - UITableViewDelegate
  
@@ -178,7 +190,7 @@ static NSInteger const MaxCount = 9;
     }
      imagePickerVc.navigationBar.translucent = NO;
     
-#pragma mark - 五类个性化设置，这些参数都可以不传，此时会走默认设置
+//#pragma mark - 五类个性化设置，这些参数都可以不传，此时会走默认设置
     // 1.设置目前已经选中的图片数组
     imagePickerVc.selectedAssets = _selectedAssets; // 目前已经选中的图片数组
     imagePickerVc.allowTakePicture = NO; // 在内部显示拍照按钮
@@ -251,7 +263,7 @@ static NSInteger const MaxCount = 9;
     // imagePickerVc.preferredLanguage = @"zh-Hans";
     // 设置languageBundle以使用其它语言 / Set languageBundle to use other language
     // imagePickerVc.languageBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"tz-ru" ofType:@"lproj"]];
-#pragma mark - 到这里为止
+
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
@@ -487,17 +499,6 @@ static NSInteger const MaxCount = 9;
     self.tableView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 88);
 //    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), (SCREEN_WIDTH - 2 * 16) + 150);
     self.sendButton.frame = CGRectMake(16, CGRectGetMaxY(self.tableView.frame)+8, CGRectGetWidth(self.view.frame) - 32, 44);
-}
-
-#pragma mark - Private
-
-/// 打印图片名字
-- (void)printAssetsName:(NSArray *)assets {
-    NSString *fileName;
-    for (PHAsset *asset in assets) {
-        fileName = [asset valueForKey:@"filename"];
-        // NSLog(@"图片名字:%@",fileName);
-    }
 }
 
 /*

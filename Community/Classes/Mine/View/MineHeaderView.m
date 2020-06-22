@@ -171,21 +171,25 @@
     
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapView:)]];
 }
-
+#pragma mark - IBActions
+- (void)myKeyAction:(UIButton *)sender
+{
+    
+}
+#pragma mark - Private
 - (void)didTapView:(UITapGestureRecognizer *)sender
 {
     if (self.didTapView) {
         self.didTapView();
     }
 }
+#pragma mark - Getter
+#pragma mark - Setter
 - (void)setDidTapView:(void (^)(void))didTapView
 {
     _didTapView = didTapView;
 }
-- (void)myKeyAction:(UIButton *)sender
-{
-    
-}
+
 
 - (void)drawRect:(CGRect)rect
 {
@@ -203,7 +207,6 @@
 }
 
 
-#pragma mark - Getter
 @end
 
 

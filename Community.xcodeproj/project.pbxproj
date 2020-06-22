@@ -469,19 +469,19 @@
 			isa = PBXGroup;
 			children = (
 				04C3C9F2248E1006000EA08F /* ViewModel */,
-				04C3C9EE248E0F50000EA08F /* View */,
+				04C3C9F6248E11B3000EA08F /* View */,
+				04C3C9EE248E0F50000EA08F /* ViewController */,
 			);
 			path = ReleaseCommunity;
 			sourceTree = "<group>";
 		};
-		04C3C9EE248E0F50000EA08F /* View */ = {
+		04C3C9EE248E0F50000EA08F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				04C3C9F6248E11B3000EA08F /* Subview */,
 				04C3C9EF248E0F6F000EA08F /* ReleaseCommunityController.h */,
 				04C3C9F0248E0F6F000EA08F /* ReleaseCommunityController.m */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		04C3C9F2248E1006000EA08F /* ViewModel */ = {
@@ -493,7 +493,7 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		04C3C9F6248E11B3000EA08F /* Subview */ = {
+		04C3C9F6248E11B3000EA08F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				04C3CA01248E3BCF000EA08F /* TZImageUploadOperation.h */,
@@ -505,7 +505,7 @@
 				04C3C9F7248E120B000EA08F /* ReleaseContentView.h */,
 				04C3C9F8248E120B000EA08F /* ReleaseContentView.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		04C3CA3324907B21000EA08F /* TestFile */ = {

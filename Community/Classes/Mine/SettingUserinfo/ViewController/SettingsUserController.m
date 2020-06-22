@@ -15,6 +15,7 @@
 @end
 
 @implementation SettingsUserController
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +30,7 @@
     self.tableView.rowHeight = 100;
     [self.tableView registerClass:[SettingsUserCell class] forCellReuseIdentifier:@"userCell"];
 }
-
+#pragma mark - UITableViewDelegate && UITableViewDataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {

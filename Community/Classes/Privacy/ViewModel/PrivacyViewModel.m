@@ -15,7 +15,7 @@
 #import <Photos/Photos.h>
 
 @implementation PrivacyViewModel
-
+#pragma mark - Public
 - (void)requestWithCallback:(callback)callBack
 {
     NSMutableArray *arr = [NSMutableArray array];

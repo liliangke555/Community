@@ -25,7 +25,7 @@
 @end
 
 @implementation PrivacyController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -47,7 +47,7 @@
     }];
 }
 
-#pragma amrk - Event
+#pragma mark - IBActions
 - (void)agreeButtonAction:(UIButton *)sender
 {
     
@@ -56,7 +56,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-#pragma amrk - Getter
+#pragma mark - Getter
 - (PrivacyTableDataSource *)tableViewDataSource
 {
     if (!_tableViewDataSource) {

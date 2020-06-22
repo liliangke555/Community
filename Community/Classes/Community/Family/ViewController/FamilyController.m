@@ -14,14 +14,14 @@
 @end
 
 @implementation FamilyController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.c
     
     [self refreshHeaderData];
 }
-
+#pragma mark - Private
 - (void)refreshHeaderData
 {
     __weak typeof(self)weakSelf = self;

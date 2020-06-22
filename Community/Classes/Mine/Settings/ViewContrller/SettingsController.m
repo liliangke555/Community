@@ -16,7 +16,7 @@
 @end
 
 @implementation SettingsController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -35,6 +35,7 @@
     [button addTarget:self action:@selector(cancelLogin:) forControlEvents:UIControlEventTouchUpInside];
     _button = button;
 }
+#pragma mark - IBActions
 
 - (void)cancelLogin:(UIButton *)sender
 {

@@ -18,7 +18,7 @@
 @end
 
 @implementation NeighborsController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@
     self.tableView.delegate = self.viewModel;
     self.tableView.dataSource = self.viewModel;
 }
-
+#pragma mark - Private
 -(void)refreshHeaderData
 {
     __weak typeof(self)weakSelf = self;

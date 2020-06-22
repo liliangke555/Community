@@ -35,7 +35,7 @@
 @end
 
 @implementation LoginViewController
-
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -89,7 +89,25 @@
     
 }
 
-#pragma mark - Helper Hanlde
+#pragma mark - IBActions
+
+- (void)loginButtonAction:(UIButton *)sender
+{
+    [self.view endEditing:YES];
+    [self.loginModel toLogin];
+
+}
+
+- (void)backButtonAction:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+#pragma mark - Private
 
 - (void)oneKeyLoginView
 {
@@ -163,24 +181,6 @@
     LoginVerificationController *vc = [[LoginVerificationController alloc] init];
     vc.loginViewModel = self.loginModel;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-#pragma mark - Event Handle
-
-- (void)loginButtonAction:(UIButton *)sender
-{
-    [self.view endEditing:YES];
-    [self.loginModel toLogin];
-
-}
-
-- (void)backButtonAction:(UIButton *)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self.view endEditing:YES];
 }
 #pragma mark - Setter
 
