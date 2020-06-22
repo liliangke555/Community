@@ -302,22 +302,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		048C798B2480F0610073FA06 /* SubView */ = {
-			isa = PBXGroup;
-			children = (
-				048C798F2480F88E0073FA06 /* CoreTextTools */,
-				048C798C2480F07E0073FA06 /* CoreTextView.h */,
-				048C798D2480F07E0073FA06 /* CoreTextView.m */,
-				04C3CA3424907BE6000EA08F /* HomeHeaderTimeView.h */,
-				04C3CA3524907BE6000EA08F /* HomeHeaderTimeView.m */,
-				04C3CA4D24933242000EA08F /* HomeSegmentScrollView.h */,
-				04C3CA4E24933242000EA08F /* HomeSegmentScrollView.m */,
-				04C3CA502493335C000EA08F /* HomeTableView.h */,
-				04C3CA512493335C000EA08F /* HomeTableView.m */,
-			);
-			path = SubView;
-			sourceTree = "<group>";
-		};
 		048C798F2480F88E0073FA06 /* CoreTextTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,33 +318,31 @@
 		048C7999248496D00073FA06 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				048C79A32484E34B0073FA06 /* Subview */,
-				048C799A248496F30073FA06 /* SettingsController.h */,
-				048C799B248496F30073FA06 /* SettingsController.m */,
+				04E0410424A05DCD0099FBDE /* ViewContrller */,
+				048C79A32484E34B0073FA06 /* View */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		048C79A32484E34B0073FA06 /* Subview */ = {
+		048C79A32484E34B0073FA06 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				048C79A42484E3770073FA06 /* LDSettingsCell.h */,
 				048C79A52484E3770073FA06 /* LDSettingsCell.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		048C79A72484E9EA0073FA06 /* SettingUserinfo */ = {
 			isa = PBXGroup;
 			children = (
-				048C79AB2484ED050073FA06 /* Subview */,
-				048C79A82484EA0F0073FA06 /* SettingsUserController.h */,
-				048C79A92484EA0F0073FA06 /* SettingsUserController.m */,
+				04E0410524A05DDB0099FBDE /* ViewController */,
+				048C79AB2484ED050073FA06 /* View */,
 			);
 			path = SettingUserinfo;
 			sourceTree = "<group>";
 		};
-		048C79AB2484ED050073FA06 /* Subview */ = {
+		048C79AB2484ED050073FA06 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				048C79AC2484ED330073FA06 /* SettingHeaderCell.h */,
@@ -368,16 +350,16 @@
 				048C79AF2484FB4D0073FA06 /* SettingsUserCell.h */,
 				048C79B02484FB4D0073FA06 /* SettingsUserCell.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
-		048C79BB24862FCB0073FA06 /* Subview */ = {
+		048C79BB24862FCB0073FA06 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				048C79BC248630A00073FA06 /* LDCommunitySegment.h */,
 				048C79BD248630A00073FA06 /* LDCommunitySegment.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		048C79BF248649E20073FA06 /* Neighbors */ = {
@@ -385,36 +367,36 @@
 			children = (
 				04C3C9DD2489DD5F000EA08F /* Model */,
 				048C79D724868CBB0073FA06 /* ViewModel */,
-				048C79C024864A310073FA06 /* View */,
+				048C79C024864A310073FA06 /* ViewController */,
 			);
 			path = Neighbors;
 			sourceTree = "<group>";
 		};
-		048C79C024864A310073FA06 /* View */ = {
+		048C79C024864A310073FA06 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				048C79C124864A740073FA06 /* NeighborsController.h */,
 				048C79C224864A740073FA06 /* NeighborsController.m */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		048C79C424864A800073FA06 /* Family */ = {
 			isa = PBXGroup;
 			children = (
 				048C79D624868CB00073FA06 /* ViewModel */,
-				048C79C524864A900073FA06 /* View */,
+				048C79C524864A900073FA06 /* ViewController */,
 			);
 			path = Family;
 			sourceTree = "<group>";
 		};
-		048C79C524864A900073FA06 /* View */ = {
+		048C79C524864A900073FA06 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				048C79C624864AA60073FA06 /* FamilyController.h */,
 				048C79C724864AA60073FA06 /* FamilyController.m */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		048C79C9248654710073FA06 /* NeighborsAndFamily */ = {
@@ -548,17 +530,189 @@
 			path = TestFile;
 			sourceTree = "<group>";
 		};
-		04C3CA532493721C000EA08F /* BaseView */ = {
+		04C3CA532493721C000EA08F /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = BaseView;
+			path = View;
+			sourceTree = "<group>";
+		};
+		04E040EE24A051B60099FBDE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				05167E1F24261A760067A2BA /* Main.storyboard */,
+				05167E2424261A760067A2BA /* LaunchScreen.storyboard */,
+				05167E2724261A760067A2BA /* Info.plist */,
+				05167E2824261A760067A2BA /* main.m */,
+				04C3CA3324907B21000EA08F /* TestFile */,
+				05167E2224261A760067A2BA /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		04E040F324A052B90099FBDE /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				05419C9A244D488000F4C16E /* Tools.h */,
+				05419C99244D488000F4C16E /* Tools.m */,
+				0579987B2449A48000EDAE0D /* JsonUitls.h */,
+				0579987D2449A48000EDAE0D /* JsonUitls.m */,
+				0579987C2449A48000EDAE0D /* StringUtils.h */,
+				0579987A2449A48000EDAE0D /* StringUtils.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		04E040F624A0547D0099FBDE /* BasicModule */ = {
+			isa = PBXGroup;
+			children = (
+				04E040FA24A054E80099FBDE /* Config */,
+				1BE8F9D72450352F002E14FC /* Category */,
+				04E040FB24A054EF0099FBDE /* Vendors */,
+			);
+			path = BasicModule;
+			sourceTree = "<group>";
+		};
+		04E040F724A054930099FBDE /* FunctionModule */ = {
+			isa = PBXGroup;
+			children = (
+				04E040F824A054C10099FBDE /* Manager */,
+				04E040F924A054C60099FBDE /* Utility */,
+			);
+			path = FunctionModule;
+			sourceTree = "<group>";
+		};
+		04E040F824A054C10099FBDE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		04E040F924A054C60099FBDE /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				05371F782446EC4900285096 /* Helpers */,
+				04E040F324A052B90099FBDE /* Tool */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		04E040FA24A054E80099FBDE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				058A1E9624286AD20053DE23 /* MarcoDefine.h */,
+				058A1E97242872C40053DE23 /* PrefixHeader.pch */,
+				05419CB3244D557E00F4C16E /* KeysMarcoDefine.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		04E040FB24A054EF0099FBDE /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		04E040FC24A0557F0099FBDE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				04E040FD24A055AA0099FBDE /* ViewController */,
+				04C3CA532493721C000EA08F /* View */,
+				04E040FE24A055C10099FBDE /* ViewModel */,
+				04E040FF24A055D30099FBDE /* Model */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		04E040FD24A055AA0099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1B41E614246D2FFA0082816C /* WebView */,
+				05371F7C2446ECB000285096 /* LDBaseViewController.h */,
+				05371F7D2446ECB000285096 /* LDBaseViewController.m */,
+				048C799D24849C1F0073FA06 /* LDBaseTableController.h */,
+				048C799E24849C1F0073FA06 /* LDBaseTableController.m */,
+				048C79A02484D5920073FA06 /* LDNavigationController.h */,
+				048C79A12484D5920073FA06 /* LDNavigationController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04E040FE24A055C10099FBDE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04E040FF24A055D30099FBDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04E0410024A05CD00099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				05419C9C244D523B00F4C16E /* LoginViewController.h */,
+				05419C9D244D523B00F4C16E /* LoginViewController.m */,
+				1BE8F9B8244FDE60002E14FC /* LoginVerificationController.h */,
+				1BE8F9B9244FDE60002E14FC /* LoginVerificationController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04E0410124A05CEB0099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				058A1E7B2428688F0053DE23 /* HomePageViewController.h */,
+				058A1E7C2428688F0053DE23 /* HomePageViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04E0410224A05D0E0099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				058A1E81242868D50053DE23 /* FamilyViewController.h */,
+				058A1E82242868D50053DE23 /* FamilyViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04E0410324A05D1A0099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				058A1E87242869080053DE23 /* DoorKeyViewController.h */,
+				058A1E88242869080053DE23 /* DoorKeyViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04E0410424A05DCD0099FBDE /* ViewContrller */ = {
+			isa = PBXGroup;
+			children = (
+				048C799A248496F30073FA06 /* SettingsController.h */,
+				048C799B248496F30073FA06 /* SettingsController.m */,
+			);
+			path = ViewContrller;
+			sourceTree = "<group>";
+		};
+		04E0410524A05DDB0099FBDE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				048C79A82484EA0F0073FA06 /* SettingsUserController.h */,
+				048C79A92484EA0F0073FA06 /* SettingsUserController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		05167E0A24261A760067A2BA = {
 			isa = PBXGroup;
 			children = (
-				04C3CA3324907B21000EA08F /* TestFile */,
 				05167E1524261A760067A2BA /* Community */,
 				05167E1424261A760067A2BA /* Products */,
 				37DC506D62AFAD744B2243E5 /* Pods */,
@@ -577,43 +731,39 @@
 		05167E1524261A760067A2BA /* Community */ = {
 			isa = PBXGroup;
 			children = (
-				1BE8F9D72450352F002E14FC /* Category */,
-				05167E2F24261AB80067A2BA /* Class */,
 				05167E1624261A760067A2BA /* AppDelegate.h */,
 				05167E1724261A760067A2BA /* AppDelegate.m */,
 				05167E1924261A760067A2BA /* SceneDelegate.h */,
 				05167E1A24261A760067A2BA /* SceneDelegate.m */,
 				05167E1C24261A760067A2BA /* ViewController.h */,
 				05167E1D24261A760067A2BA /* ViewController.m */,
-				05167E1F24261A760067A2BA /* Main.storyboard */,
-				05167E2224261A760067A2BA /* Assets.xcassets */,
-				05167E2424261A760067A2BA /* LaunchScreen.storyboard */,
-				05167E2724261A760067A2BA /* Info.plist */,
-				05167E2824261A760067A2BA /* main.m */,
+				05167E2F24261AB80067A2BA /* Classes */,
+				04E040F724A054930099FBDE /* FunctionModule */,
+				04E040F624A0547D0099FBDE /* BasicModule */,
+				04E040EE24A051B60099FBDE /* Resource */,
 			);
 			path = Community;
 			sourceTree = "<group>";
 		};
-		05167E2F24261AB80067A2BA /* Class */ = {
+		05167E2F24261AB80067A2BA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1B41E614246D2FFA0082816C /* WebView */,
+				04E040FC24A0557F0099FBDE /* Base */,
 				1BE8F9BE244FF4AA002E14FC /* Privacy */,
-				05371F782446EC4900285096 /* Helpers */,
 				058A1E77242868470053DE23 /* Mine */,
 				058A1E76242868320053DE23 /* Community */,
 				058A1E752428680C0053DE23 /* DoorKey */,
 				058A1E74242867E20053DE23 /* Family */,
 				058A1E73242867D80053DE23 /* HomePage */,
-				058A1E722428650A0053DE23 /* Marco */,
 				05167E3024261AC00067A2BA /* Login */,
 			);
-			path = Class;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		05167E3024261AC00067A2BA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				04E0410024A05CD00099FBDE /* ViewController */,
 				05167E3324261AE20067A2BA /* ViewModel */,
 				05167E3224261ADC0067A2BA /* View */,
 				05167E3124261AC70067A2BA /* Model */,
@@ -633,11 +783,14 @@
 		05167E3224261ADC0067A2BA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				05419C9C244D523B00F4C16E /* LoginViewController.h */,
-				05419C9D244D523B00F4C16E /* LoginViewController.m */,
-				1BE8F9B8244FDE60002E14FC /* LoginVerificationController.h */,
-				1BE8F9B9244FDE60002E14FC /* LoginVerificationController.m */,
-				1BE8F9B7244FD8C6002E14FC /* Subview */,
+				1BE8F9AE244EC712002E14FC /* UnderlineText.h */,
+				1BE8F9AF244EC712002E14FC /* UnderlineText.m */,
+				1BE8F9B1244ECC2D002E14FC /* LoginButton.h */,
+				1BE8F9B2244ECC2D002E14FC /* LoginButton.m */,
+				1BE8F9B4244ED460002E14FC /* LoginSelectView.h */,
+				1BE8F9B5244ED460002E14FC /* LoginSelectView.m */,
+				1BE8F9BB244FE28B002E14FC /* CodeResignView.h */,
+				1BE8F9BC244FE28B002E14FC /* CodeResignView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -657,37 +810,8 @@
 				057998842449AB3A00EDAE0D /* UserTempData */,
 				057998762449A33E00EDAE0D /* Network */,
 				05371F7B2446EC6700285096 /* Third */,
-				05371F7A2446EC5C00285096 /* Tool */,
-				05371F792446EC5100285096 /* Base */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		05371F792446EC5100285096 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				04C3CA532493721C000EA08F /* BaseView */,
-				05371F7C2446ECB000285096 /* LDBaseViewController.h */,
-				05371F7D2446ECB000285096 /* LDBaseViewController.m */,
-				048C799D24849C1F0073FA06 /* LDBaseTableController.h */,
-				048C799E24849C1F0073FA06 /* LDBaseTableController.m */,
-				048C79A02484D5920073FA06 /* LDNavigationController.h */,
-				048C79A12484D5920073FA06 /* LDNavigationController.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		05371F7A2446EC5C00285096 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				05419C9A244D488000F4C16E /* Tools.h */,
-				05419C99244D488000F4C16E /* Tools.m */,
-				0579987B2449A48000EDAE0D /* JsonUitls.h */,
-				0579987D2449A48000EDAE0D /* JsonUitls.m */,
-				0579987C2449A48000EDAE0D /* StringUtils.h */,
-				0579987A2449A48000EDAE0D /* StringUtils.m */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		05371F7B2446EC6700285096 /* Third */ = {
@@ -703,10 +827,10 @@
 		05419C9F244D530A00F4C16E /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				05419CA0244D530A00F4C16E /* Reachability.m */,
 				05419CA1244D530A00F4C16E /* WatchDog.h */,
 				05419CA2244D530A00F4C16E /* WatchDog.m */,
 				05419CA3244D530A00F4C16E /* Reachability.h */,
+				05419CA0244D530A00F4C16E /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -755,19 +879,10 @@
 			path = UserTempData;
 			sourceTree = "<group>";
 		};
-		058A1E722428650A0053DE23 /* Marco */ = {
-			isa = PBXGroup;
-			children = (
-				058A1E9624286AD20053DE23 /* MarcoDefine.h */,
-				058A1E97242872C40053DE23 /* PrefixHeader.pch */,
-				05419CB3244D557E00F4C16E /* KeysMarcoDefine.h */,
-			);
-			path = Marco;
-			sourceTree = "<group>";
-		};
 		058A1E73242867D80053DE23 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				04E0410124A05CEB0099FBDE /* ViewController */,
 				058A1E7A2428686A0053DE23 /* Model */,
 				058A1E782428685A0053DE23 /* View */,
 				058A1E79242868610053DE23 /* ViewModel */,
@@ -778,6 +893,7 @@
 		058A1E74242867E20053DE23 /* Family */ = {
 			isa = PBXGroup;
 			children = (
+				04E0410224A05D0E0099FBDE /* ViewController */,
 				058A1E80242868C40053DE23 /* Model */,
 				058A1E7F242868C00053DE23 /* View */,
 				058A1E7E242868B60053DE23 /* ViewModel */,
@@ -788,6 +904,7 @@
 		058A1E752428680C0053DE23 /* DoorKey */ = {
 			isa = PBXGroup;
 			children = (
+				04E0410324A05D1A0099FBDE /* ViewController */,
 				058A1E86242868F20053DE23 /* Model */,
 				058A1E85242868ED0053DE23 /* View */,
 				058A1E84242868E60053DE23 /* ViewModel */,
@@ -803,7 +920,8 @@
 				048C79C424864A800073FA06 /* Family */,
 				048C79BF248649E20073FA06 /* Neighbors */,
 				058A1E8C242869230053DE23 /* Model */,
-				058A1E8B2428691C0053DE23 /* View */,
+				058A1E8B2428691C0053DE23 /* ViewController */,
+				048C79BB24862FCB0073FA06 /* View */,
 				058A1E8A242869120053DE23 /* ViewModel */,
 			);
 			path = Community;
@@ -816,7 +934,8 @@
 				048C7999248496D00073FA06 /* Settings */,
 				1BE8F9DB24504D38002E14FC /* MessageCenter */,
 				058A1E922428695B0053DE23 /* Model */,
-				058A1E91242869540053DE23 /* View */,
+				1BE8F9D324502AFB002E14FC /* View */,
+				058A1E91242869540053DE23 /* ViewContrller */,
 				058A1E902428694C0053DE23 /* ViewModel */,
 			);
 			path = Mine;
@@ -825,9 +944,15 @@
 		058A1E782428685A0053DE23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				048C798B2480F0610073FA06 /* SubView */,
-				058A1E7B2428688F0053DE23 /* HomePageViewController.h */,
-				058A1E7C2428688F0053DE23 /* HomePageViewController.m */,
+				048C798F2480F88E0073FA06 /* CoreTextTools */,
+				048C798C2480F07E0073FA06 /* CoreTextView.h */,
+				048C798D2480F07E0073FA06 /* CoreTextView.m */,
+				04C3CA3424907BE6000EA08F /* HomeHeaderTimeView.h */,
+				04C3CA3524907BE6000EA08F /* HomeHeaderTimeView.m */,
+				04C3CA4D24933242000EA08F /* HomeSegmentScrollView.h */,
+				04C3CA4E24933242000EA08F /* HomeSegmentScrollView.m */,
+				04C3CA502493335C000EA08F /* HomeTableView.h */,
+				04C3CA512493335C000EA08F /* HomeTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -856,8 +981,6 @@
 		058A1E7F242868C00053DE23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				058A1E81242868D50053DE23 /* FamilyViewController.h */,
-				058A1E82242868D50053DE23 /* FamilyViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -879,8 +1002,6 @@
 		058A1E85242868ED0053DE23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				058A1E87242869080053DE23 /* DoorKeyViewController.h */,
-				058A1E88242869080053DE23 /* DoorKeyViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -899,14 +1020,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		058A1E8B2428691C0053DE23 /* View */ = {
+		058A1E8B2428691C0053DE23 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				048C79BB24862FCB0073FA06 /* Subview */,
 				058A1E8D242869430053DE23 /* CommunityViewController.h */,
 				058A1E8E242869430053DE23 /* CommunityViewController.m */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		058A1E8C242869230053DE23 /* Model */ = {
@@ -925,14 +1045,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		058A1E91242869540053DE23 /* View */ = {
+		058A1E91242869540053DE23 /* ViewContrller */ = {
 			isa = PBXGroup;
 			children = (
 				058A1E93242869730053DE23 /* MineViewController.h */,
 				058A1E94242869730053DE23 /* MineViewController.m */,
-				1BE8F9D324502AFB002E14FC /* Subview */,
 			);
-			path = View;
+			path = ViewContrller;
 			sourceTree = "<group>";
 		};
 		058A1E922428695B0053DE23 /* Model */ = {
@@ -942,7 +1061,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1B1EE69A245182BF00244005 /* Subview */ = {
+		1B1EE69A245182BF00244005 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1B1EE69B245182DD00244005 /* MessageHeaderView.h */,
@@ -954,7 +1073,7 @@
 				048C79B82485FEBF0073FA06 /* MessageCenterCommunityNoticeCell.h */,
 				048C79B92485FEBF0073FA06 /* MessageCenterCommunityNoticeCell.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1B41E614246D2FFA0082816C /* WebView */ = {
@@ -966,49 +1085,34 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		1BE8F9B7244FD8C6002E14FC /* Subview */ = {
-			isa = PBXGroup;
-			children = (
-				1BE8F9AE244EC712002E14FC /* UnderlineText.h */,
-				1BE8F9AF244EC712002E14FC /* UnderlineText.m */,
-				1BE8F9B1244ECC2D002E14FC /* LoginButton.h */,
-				1BE8F9B2244ECC2D002E14FC /* LoginButton.m */,
-				1BE8F9B4244ED460002E14FC /* LoginSelectView.h */,
-				1BE8F9B5244ED460002E14FC /* LoginSelectView.m */,
-				1BE8F9BB244FE28B002E14FC /* CodeResignView.h */,
-				1BE8F9BC244FE28B002E14FC /* CodeResignView.m */,
-			);
-			path = Subview;
-			sourceTree = "<group>";
-		};
 		1BE8F9BE244FF4AA002E14FC /* Privacy */ = {
 			isa = PBXGroup;
 			children = (
 				1BE8F9CF245013BD002E14FC /* Model */,
 				1BE8F9CB2450137A002E14FC /* ViewModel */,
 				1BE8F9C7244FF646002E14FC /* Protocol */,
-				1BE8F9BF244FF4E8002E14FC /* View */,
+				1BE8F9C3244FF5B9002E14FC /* View */,
+				1BE8F9BF244FF4E8002E14FC /* ViewContrller */,
 			);
 			path = Privacy;
 			sourceTree = "<group>";
 		};
-		1BE8F9BF244FF4E8002E14FC /* View */ = {
+		1BE8F9BF244FF4E8002E14FC /* ViewContrller */ = {
 			isa = PBXGroup;
 			children = (
 				1BE8F9C0244FF509002E14FC /* PrivacyController.h */,
 				1BE8F9C1244FF509002E14FC /* PrivacyController.m */,
-				1BE8F9C3244FF5B9002E14FC /* Subview */,
 			);
-			path = View;
+			path = ViewContrller;
 			sourceTree = "<group>";
 		};
-		1BE8F9C3244FF5B9002E14FC /* Subview */ = {
+		1BE8F9C3244FF5B9002E14FC /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1BE8F9C4244FF5E7002E14FC /* PrivacyViewCell.h */,
 				1BE8F9C5244FF5E7002E14FC /* PrivacyViewCell.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1BE8F9C7244FF646002E14FC /* Protocol */ = {
@@ -1038,13 +1142,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1BE8F9D324502AFB002E14FC /* Subview */ = {
+		1BE8F9D324502AFB002E14FC /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1BE8F9D424502B31002E14FC /* MineHeaderView.h */,
 				1BE8F9D524502B31002E14FC /* MineHeaderView.m */,
 			);
-			path = Subview;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1BE8F9D72450352F002E14FC /* Category */ = {
@@ -1065,19 +1169,19 @@
 		1BE8F9DB24504D38002E14FC /* MessageCenter */ = {
 			isa = PBXGroup;
 			children = (
-				1BE8F9DC24504D4B002E14FC /* View */,
+				1B1EE69A245182BF00244005 /* View */,
+				1BE8F9DC24504D4B002E14FC /* ViewContrller */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
 		};
-		1BE8F9DC24504D4B002E14FC /* View */ = {
+		1BE8F9DC24504D4B002E14FC /* ViewContrller */ = {
 			isa = PBXGroup;
 			children = (
-				1B1EE69A245182BF00244005 /* Subview */,
 				1BE8F9DD24504D64002E14FC /* MessageCenterController.h */,
 				1BE8F9DE24504D64002E14FC /* MessageCenterController.m */,
 			);
-			path = View;
+			path = ViewContrller;
 			sourceTree = "<group>";
 		};
 		37DC506D62AFAD744B2243E5 /* Pods */ = {
