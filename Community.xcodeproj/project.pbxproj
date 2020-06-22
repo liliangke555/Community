@@ -1569,7 +1569,7 @@
 				DEVELOPMENT_TEAM = B3YCM7X5H7;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/Class/Marco/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/BasicModule/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1592,7 +1592,7 @@
 				DEVELOPMENT_TEAM = B3YCM7X5H7;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/Class/Marco/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Community/BasicModule/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Community/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
